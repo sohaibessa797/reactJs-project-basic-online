@@ -1,36 +1,38 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import ProductCard from "./components/ProductCard";
+import Modal from "./components/ui/Modal";
+import { productList } from "./data";
+import Button from "./components/ui/Button";
 
-function App() {
-  const [count, setCount] = useState(0);
+const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  const renderProductList = productList.map((product) => (
+    <ProductCard key={product.id} product={product} />
+  ));
   return (
-    <>
+    <main className="container mx-auto px-4 sm:px-8 lg:px-16 xl:px-20 2xl:px-28">
+      <Button className={"bg-indigo-600 hover:bg-indigo-700 w-full items-center "} onClick={openModal}>Add</Button>
+      <div className="m-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-4 p-2 rounded-md">
+        {renderProductList}
+      </div>
+      
       <div>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Modal isOpen={isOpen} closeModal={closeModal} title="Add A New Product">
+          <Button className={"bg-indigo-600 hover:bg-indigo-700"} onClick={openModal}>Submit</Button>
+          <Button className={"bg-red-600 hover:bg-red-700 active:bg-red-800"} onClick={closeModal}>Cansle</Button>
+        </Modal>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </main>
   );
-}
+};
 
 export default App;
