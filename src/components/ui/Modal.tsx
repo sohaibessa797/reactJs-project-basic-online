@@ -47,7 +47,7 @@ const Modal = ({ isOpen, closeModal, title, children }: IProps) => {
                     </Dialog.Title>
                   )}
 
-                  <div className="flex gap-3 mt-5">
+                  <div className="mt-5 space-y-4">
                     {children}
                   </div>
                 </Dialog.Panel>

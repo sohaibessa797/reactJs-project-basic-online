@@ -2,7 +2,7 @@ import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  children?: ReactNode;
+  children: ReactNode;
 }
 
 const Button = ({ className, children, ...rest }: IProps) => {
