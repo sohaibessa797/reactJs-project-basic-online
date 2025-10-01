@@ -9,11 +9,11 @@ export interface IProduct {
 }
 
 export interface IFormInput {
-  id: string;           
-  name: string;       
+  id: string;
+  name: "title" | "description" | "imgURl" | "price";
   label: string;
   type: "text" | "textarea" | "number" | "file" | "color" | "select";
   placeholder?: string;
   required?: boolean;
-  options?: { value: string; label: string }[]; 
+  options?: { value: string; label: string }[];
 }

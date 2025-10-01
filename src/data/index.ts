@@ -91,7 +91,7 @@ export const forInputList: IFormInput[] = [
   },
   {
     id: "image",
-    name: "image",
+    name: "imgURl",
     label: "Product Image",
     type: "file",
     required: false,
@@ -103,25 +103,26 @@ export const forInputList: IFormInput[] = [
     type: "number",
     placeholder: "0.00",
     required: true,
-  },
-  {
-    id: "ctogry",
-    name: "ctogry",
-    label: "Category",
-    type: "select",
-    required: true,
-    options: [
-      { value: "clothing", label: "Clothing" },
-      { value: "electronics", label: "Electronics" },
-      { value: "kitchen", label: "Kitchen" },
-      { value: "accessories", label: "Accessories" },
-    ],
-  },
-  {
-    id: "color",
-    name: "color",
-    label: "Color",
-    type: "color",
-    required: false,
-  },
+  }
+  // ,
+  // {
+  //   id: "ctogry",
+  //   name: "category",
+  //   label: "Category",
+  //   type: "select",
+  //   required: true,
+  //   options: [
+  //     { value: "clothing", label: "Clothing" },
+  //     { value: "electronics", label: "Electronics" },
+  //     { value: "kitchen", label: "Kitchen" },
+  //     { value: "accessories", label: "Accessories" },
+  //   ],
+  // },
+  // {
+  //   id: "color",
+  //   name: "colors",
+  //   label: "Color",
+  //   type: "color",
+  //   required: false,
+  // },
 ];
