@@ -93,8 +93,9 @@ export const forInputList: IFormInput[] = [
     id: "image",
     name: "imgURl",
     label: "Product Image",
-    type: "file",
-    required: false,
+    type: "textarea",
+    placeholder: "Enter product imge URl",
+    required: true,
   },
   {
     id: "price",
@@ -103,7 +104,7 @@ export const forInputList: IFormInput[] = [
     type: "number",
     placeholder: "0.00",
     required: true,
-  }
+  },
   // ,
   // {
   //   id: "ctogry",
